@@ -1,0 +1,51 @@
+.team-name {
+    color: white; 
+    font-size: 50px; 
+    padding-left: 20px;
+    margin: 0; 
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+.line {
+    display: flex; 
+    justify-content: space-around;
+}
+
+.gk-line {
+    display: flex; 
+    justify-content: center;
+}
+
+.field {
+    width: 95%; 
+    height: 950px; 
+    background-image: url('field.jpg');
+    background-color: #DEDAD9; 
+    background-size: contain;
+    background-repeat: round;
+    /* border: 5px solid #DEDAD9; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.player {
+    display: flex;
+    flex-flow: column;
+}
+
+.flag {
+    width: 40px;
+}
+
+.player-name {
+    width: 200px;
+    padding: 7px;
+    background-color: #EDECEA;
+    text-align: center;
+}
+
+.family-name {
+    font-weight: bold;
+}
