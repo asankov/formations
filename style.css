@@ -1,3 +1,15 @@
+@font-face {
+    font-family: premierLeague;
+    src: url('font.ttf');
+}
+
+html {
+    font-family: premierLeague, 'Arial';
+    background-color: #ECEFE8;
+    font-size: 20px;
+
+}
+
 .team-name {
     color: white; 
     font-size: 50px; 
@@ -6,6 +18,12 @@
     position: absolute; 
     top: 50%; 
     transform: translateY(-50%);
+}
+
+.bench-player {
+    background-color: #ECEFE8;
+    border-bottom: 5px solid #ABACA6 ;
+    padding: 5px;
 }
 
 .line {
@@ -18,9 +36,16 @@
     justify-content: center;
 }
 
+.team-logo {
+    height: 280px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .field {
     width: 95%; 
-    height: 950px; 
+    height: 700px; 
     background-image: url('field.jpg');
     background-color: #DEDAD9; 
     background-size: contain;
@@ -40,10 +65,11 @@
 }
 
 .player-name {
-    width: 200px;
+    width: 250px;
     padding: 7px;
     background-color: #EDECEA;
     text-align: center;
+    font-size: 23px;
 }
 
 .family-name {
