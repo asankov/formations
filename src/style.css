@@ -1,77 +1,146 @@
 @font-face {
-    font-family: premierLeague;
-    src: local('premierLeague'), url('./font.ttf');
+  font-family: "premierLeague";
+  src: local("premierLeague"), url("./font.ttf"), format("truetype");
 }
 
 html {
-    font-family: premierLeague, 'Arial';
-    background-color: #ECEFE8;
-    font-size: 20px;
+  font-family: "premierLeague", "Arial";
+  background-color: #ecefe8;
+  font-size: 20px;
+}
 
+.team-name-container {
+  position: relative;
+  background-color: #3d0244;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .team-name {
-    color: white; 
-    font-size: 50px; 
-    padding-left: 20px;
-    margin: 0; 
-    position: absolute; 
-    top: 50%; 
-    transform: translateY(-50%);
+  color: white;
+  font-size: 50px;
+  padding-left: 20px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .bench-player {
-    background-color: #ECEFE8;
-    border-bottom: 5px solid #ABACA6 ;
-    padding: 5px;
+  background-color: #ecefe8;
+  border-bottom: 5px solid #abaca6;
+  padding: 5px;
 }
 
 .line {
-    display: flex; 
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .gk-line {
-    display: flex; 
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .team-logo {
-    height: 280px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  height: 280px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pl-logo-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.pl-logo {
+  width: 50px;
+  padding-right: 20px;
 }
 
 .field {
-    width: 95%; 
-    height: 700px; 
-    background-image: url('field.jpg');
-    background-color: #DEDAD9; 
-    background-size: contain;
-    background-repeat: round;
-    /* border: 5px solid #DEDAD9; */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  width: 95%;
+  height: 700px;
+  background-image: url("field.jpg");
+  background-color: #dedad9;
+  background-size: contain;
+  background-repeat: round;
+  /* border: 5px solid #DEDAD9; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
+
+.field-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .player {
-    display: flex;
-    flex-flow: column;
+  display: flex;
+  flex-flow: column;
 }
 
 .flag {
-    width: 40px;
+  width: 40px;
 }
 
 .player-name {
-    width: 250px;
-    padding: 7px;
-    background-color: #EDECEA;
-    text-align: center;
-    font-size: 23px;
+  width: 250px;
+  padding: 7px;
+  background-color: #edecea;
+  text-align: center;
+  font-size: 23px;
 }
 
 .family-name {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.manager-headline {
+  background-color: #3d0244;
+  color: white;
+  padding: 10px;
+}
+
+.manager-name {
+  background-color: #ecefe8;
+  color: black;
+  padding: 10px;
+}
+
+.substitutes-headline {
+  background-color: #5bd985;
+  color: black;
+  padding: 10px;
+  border-bottom: 5px solid #abaca6;
+}
+
+.gk-label {
+  float: right;
+  padding-right: 10px;
+}
+
+.left-side {
+  width: 20%;
+}
+
+.right-side {
+  width: 80%;
+}
+
+.crest {
+  height: 300px;
+}
+
+.root {
+  background-color: #ecefe8;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
