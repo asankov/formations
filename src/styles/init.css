@@ -94,6 +94,10 @@ input {
   width: 200px;
 }
 
+.team-name-input{
+  width: 300px;
+}
+
 input:focus {
   box-shadow: 0px 0px 0px 2px #3d0244 inset;
 

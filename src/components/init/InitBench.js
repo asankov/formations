@@ -25,6 +25,14 @@ const InitBench = ({
           <div key={i} className="player-input-container name-input">
             <input
               type="text"
+              name="firstName"
+              value={player.firstName}
+              onChange={e => onBenchPlayerNameChange(e, i)}
+            />
+            <input
+              style={{ marginLeft: "10px" }}
+              type="text"
+              name="lastName"
               value={player.lastName}
               onChange={e => onBenchPlayerNameChange(e, i)}
             />

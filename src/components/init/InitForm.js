@@ -8,28 +8,32 @@ const InitForm = ({
   players,
   bench,
   teamName,
-  managerName,
+  manager,
   errors,
   disableBench,
   onPlayerFirstNameChange,
   onPlayerLastNameChange,
+  onPlayerNumberChange,
   onPlayerCaptainButtonClicked,
   onTeamNameChange,
-  onManagerNameChange,
+  onManagerFirstNameChange,
+  onManagerLastNameChange,
   onBenchPlayerNameChange,
   onBenchGkSelection,
   onRemoveBenchPlayer,
   onAddPlayerToBench,
   onSubmit,
+  onPopulate,
 }) => {
   return (
-    <div className="squad-input">
+    <form className="squad-input" onSubmit={onSubmit}>
       <div className="first-column">
         <InitPlayers
           players={players}
           errors={errors}
           onPlayerFirstNameChange={onPlayerFirstNameChange}
           onPlayerLastNameChange={onPlayerLastNameChange}
+          onPlayerNumberChange={onPlayerNumberChange}
           onPlayerCaptainButtonClicked={onPlayerCaptainButtonClicked}
         />
       </div>
@@ -38,8 +42,9 @@ const InitForm = ({
           teamName={teamName}
           errors={errors}
           onTeamNameChange={onTeamNameChange}
-          managerName={managerName}
-          onManagerNameChange={onManagerNameChange}
+          manager={manager}
+          onManagerFirstNameChange={onManagerFirstNameChange}
+          onManagerLastNameChange={onManagerLastNameChange}
         />
         <InitBench
           bench={bench}
@@ -52,13 +57,14 @@ const InitForm = ({
       </div>
       <div className="third-column">
         <div>
-          <button className="submit-button" onClick={onSubmit}>
+          <button onClick={onPopulate}>Populate</button>
+          <button className="submit-button" type="submit">
             {" "}
             READY!{" "}
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
@@ -67,11 +73,13 @@ InitForm.propTypes = {
   errors: PropTypes.object.isRequired,
   onPlayerFirstNameChange: PropTypes.func.isRequired,
   onPlayerLastNameChange: PropTypes.func.isRequired,
+  onPlayerNumberChange: PropTypes.func.isRequired,
   onPlayerCaptainButtonClicked: PropTypes.func.isRequired,
   teamName: PropTypes.string.isRequired,
   onTeamNameChange: PropTypes.func.isRequired,
-  managerName: PropTypes.string.isRequired,
-  onManagerNameChange: PropTypes.func.isRequired,
+  manager: PropTypes.object.isRequired,
+  onManagerFirstNameChange: PropTypes.func.isRequired,
+  onManagerLastNameChange: PropTypes.func.isRequired,
   bench: PropTypes.array.isRequired,
   onBenchPlayerNameChange: PropTypes.func.isRequired,
   onBenchGkSelection: PropTypes.func.isRequired,

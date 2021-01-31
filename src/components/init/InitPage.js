@@ -7,7 +7,7 @@ import { submitTeam } from "../../redux/actions/teamActions";
 const InitPage = props => {
   const [errors, setErrors] = useState({});
   const [teamName, setTeamName] = useState(props.teamName);
-  const [managerName, setManagerName] = useState(props.managerName);
+  const [manager, setManager] = useState(props.manager);
   const [bench, setBench] = useState([...props.bench]);
   const [players, setPlayers] = useState([...props.players]);
 
@@ -31,17 +31,30 @@ const InitPage = props => {
     setPlayers(newPlayers);
   };
 
-  const handlePlayerCaptainButtonClicked = i => {
-    const newPlayers = [...players];
-    newPlayers.map((p, index) => (p.isCaptain = index === i));
+  const handlePlayerNumberChange = ({ target }, i) => {
+    const regex = /^[0-9]{0,2}$/;
+    const value = target.value;
+    if (value === "0" || !regex.test(value)) {
+      return;
+    }
+    let newPlayers = [...players];
+    newPlayers[i] = { ...newPlayers[i], number: target.value };
     setPlayers(newPlayers);
   };
 
-  const handleBenchPlayerNameChange = (e, i) => {
+  const handlePlayerCaptainButtonClicked = i => {
+    let newPlayers = [...players];
+    newPlayers.forEach((player, index) => {
+      newPlayers[index] = { ...player, isCaptain: index === i };
+    });
+    setPlayers(newPlayers);
+  };
+
+  const handleBenchPlayerNameChange = ({ target }, i) => {
     const newBench = [...bench];
     newBench[i] = {
       ...newBench[i],
-      lastName: e.target.value,
+      [target.name]: target.value,
     };
     setBench(newBench);
   };
@@ -69,26 +82,27 @@ const InitPage = props => {
 
   const handleTeamNameChange = ({ target }) => setTeamName(target.value);
 
-  const handleManagerNameChange = ({ target }) => setManagerName(target.value);
+  const handleManagerFirstNameChange = ({ target }) =>
+    setManager({ ...manager, firstName: target.value });
 
-  const handleSubmit = () => {
+  const handleManagerLastNameChange = ({ target }) => {
+    // TODO: validation
+    setManager({ ...manager, lastName: target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
     if (!validateForm()) {
       return;
     }
     // TODO: different formations
-    const playersInFormation = {
-      gk: players[0],
-      def: [players[3], players[2], players[1], players[4]],
-      mid: [players[6], players[5], players[7]],
-      att: [players[8], players[10], players[9]],
-    };
-    // TODO: manager
+
     props.submitTeam({
       players: players,
-      formation: playersInFormation,
       bench: bench.filter(p => p.lastName),
       teamName,
-      manager: { lastName: managerName },
+      manager: manager,
     });
     props.history.push("/field");
   };
@@ -101,7 +115,7 @@ const InitPage = props => {
       }
     });
 
-    if (!managerName) {
+    if (!manager.lastName) {
       _errors["manager"] = "Manager name is required.";
     }
 
@@ -113,24 +127,121 @@ const InitPage = props => {
     return Object.entries(_errors).length === 0;
   };
 
+  const handlePopulate = e => {
+    e.preventDefault();
+    setTeamName("TOTTENHAM HOTSPUR FC");
+    setManager({ firstName: "JOSE", lastName: "MOURINHO" });
+    setBench([
+      { firstName: "PAULO", lastName: "GAZZANIGA", isGk: true },
+      { firstName: "DAVINSON", lastName: "SANCHEZ", isGk: false },
+      { firstName: "SERGE", lastName: "AURIER", isGk: false },
+      { firstName: "HARRY", lastName: "WINKS", isGk: false },
+      { firstName: "GIOVANI", lastName: "LO CELSO", isGk: false },
+      { firstName: "STEVEN", lastName: "BERGWIJN", isGk: false },
+      { firstName: "LUCAS", lastName: "MOURA", isGk: false },
+    ]);
+    setPlayers([
+      {
+        position: "GK",
+        firstName: "HUGO",
+        lastName: "LLORIS",
+        number: 1,
+        isCaptain: true,
+      },
+      {
+        position: "CB",
+        firstName: "ERIK",
+        lastName: "DIER",
+        number: 15,
+        isCaptain: false,
+      },
+      {
+        position: "CB",
+        firstName: "TOBY",
+        lastName: "ALDERWEIRELD",
+        number: 4,
+        isCaptain: false,
+      },
+      {
+        position: "RB",
+        firstName: "MATT",
+        lastName: "DOHERTY",
+        number: 2,
+        isCaptain: false,
+      },
+      {
+        position: "LB",
+        firstName: "SERGIO",
+        lastName: "REGUILLON",
+        number: 3,
+        isCaptain: false,
+      },
+      {
+        position: "CM",
+        firstName: "PIERRE-EMILE",
+        lastName: "HOJBJERG",
+        number: 5,
+        isCaptain: false,
+      },
+      {
+        position: "RCM",
+        firstName: "MOUSSA",
+        lastName: "SISSOKO",
+        number: 17,
+        isCaptain: false,
+      },
+      {
+        position: "LCM",
+        firstName: "TANGUY",
+        lastName: "NDOMBELE",
+        number: 28,
+        isCaptain: false,
+      },
+      {
+        position: "RF",
+        firstName: "GARETH",
+        lastName: "BALE",
+        number: 11,
+        isCaptain: false,
+      },
+      {
+        position: "LF",
+        firstName: "HEUNG-MIN",
+        lastName: "SON",
+        number: 7,
+        isCaptain: false,
+      },
+      {
+        position: "CF",
+        firstName: "HARRY",
+        lastName: "KANE",
+        number: 10,
+        isCaptain: false,
+      },
+    ]);
+  };
+
   return (
     <InitForm
       players={players}
       bench={bench}
       teamName={teamName}
-      managerName={managerName}
+      manager={manager}
       errors={errors}
       disableBench={disableBench}
       onPlayerFirstNameChange={handlePlayerFirstNameChange}
       onPlayerLastNameChange={handlePlayerLastNameChange}
+      onPlayerNumberChange={handlePlayerNumberChange}
       onPlayerCaptainButtonClicked={handlePlayerCaptainButtonClicked}
       onTeamNameChange={handleTeamNameChange}
-      onManagerNameChange={handleManagerNameChange}
+      onManagerFirstNameChange={handleManagerFirstNameChange}
+      onManagerLastNameChange={handleManagerLastNameChange}
       onBenchPlayerNameChange={handleBenchPlayerNameChange}
       onBenchGkSelection={handleBenchGkSelection}
       onRemoveBenchPlayer={handleRemoveBenchPlayer}
       onAddPlayerToBench={handleAddPlayerToBench}
       onSubmit={handleSubmit}
+      onPopulate={handlePopulate}
     />
   );
 };
@@ -139,7 +250,7 @@ InitPage.propTypes = {
   players: PropTypes.array.isRequired,
   bench: PropTypes.array.isRequired,
   teamName: PropTypes.string,
-  managerName: PropTypes.string,
+  manager: PropTypes.object,
   submitTeam: PropTypes.func.isRequired,
   history: PropTypes.object.isRequired,
 };
@@ -149,7 +260,7 @@ const mapStateToProps = state => {
     players: state.players,
     bench: state.bench,
     teamName: state.teamName,
-    managerName: state.manager.lastName,
+    manager: state.manager,
   };
 };
 

@@ -39,7 +39,6 @@ html {
   font-size: 50px;
   padding-left: 20px;
   margin: 0;
-  position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
@@ -53,6 +52,22 @@ html {
 .line {
   display: flex;
   justify-content: space-around;
+}
+
+.player-number-container {
+  display: flex;
+  justify-content: center;
+}
+
+.player-number-and-captain-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player-number {
+  font-weight: bold;
+  font-size: 36px;
+  align-self: center;
 }
 
 .captain-badge {

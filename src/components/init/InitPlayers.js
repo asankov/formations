@@ -6,6 +6,7 @@ const InitPlayers = ({
   errors,
   onPlayerFirstNameChange,
   onPlayerLastNameChange,
+  onPlayerNumberChange,
   onPlayerCaptainButtonClicked,
 }) => {
   const renderPlayer = (player, i) => {
@@ -21,6 +22,13 @@ const InitPlayers = ({
       <div key={i} className="player-input-container">
         <div className="position">{player.position}</div>
         <span className={inputClassName}>
+          <input
+            style={{ marginRight: "10px", width: "30px" }}
+            // TODO; try number with stilyng
+            type="text"
+            value={player.number}
+            onChange={e => onPlayerNumberChange(e, i)}
+          />
           <input
             type="text"
             value={player.firstName}
@@ -53,6 +61,7 @@ InitPlayers.propTypes = {
   errors: PropTypes.object.isRequired,
   onPlayerFirstNameChange: PropTypes.func.isRequired,
   onPlayerLastNameChange: PropTypes.func.isRequired,
+  onPlayerNumberChange: PropTypes.func.isRequired,
   onPlayerCaptainButtonClicked: PropTypes.func.isRequired,
 };
 
