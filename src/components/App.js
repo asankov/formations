@@ -2,8 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 import FieldPage from "./field/FieldPage";
 import InitPage from "./init/InitPage";
-import "../init.css";
-import "../style.css";
+import "../styles/init.css";
+import "../styles/style.css";
 
 const App = () => (
   <Switch>
