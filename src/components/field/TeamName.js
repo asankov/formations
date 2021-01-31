@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import plLogo from "../../logo.png";
+import plLogo from "../../images/logo.png";
 
 const TeamName = ({ teamName }) => (
   <div className="team-name-container">

@@ -90,7 +90,7 @@ html {
 .field {
   width: 95%;
   height: 700px;
-  background-image: url("../field.jpg");
+  background-image: url("../images/field.jpg");
   background-color: #dedad9;
   background-size: contain;
   background-repeat: round;
