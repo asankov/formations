@@ -6,22 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formation</title>
     <link rel="stylesheet" href="init.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div style="display: flex; justify-content: space-between; flex-direction: column;">
-        <div class="toolbar-container">
-            <div style="background-color: #3D0244; height: 90px; display: flex; justify-content: space-between;">
-                <div style="position: relative;">
-                    <span class="team-name"> LIVERPOOL </span>
-                </div>
-                <div style="position: relative; display: flex; flex-direction: column; justify-content: center;">
-                    <img src="logo.png" style="width: 50px; padding-right: 20px;" alt="">
-                </div>
-            </div>
-        </div>
+    <div class="root">
         <div class="squad-container">
-            <div class="squad-input" style="display: flex; justify-content: space-around;">
+            <div class="squad-input">
                 <div class="first-column">
                     <div class="squad">
                         <div class="player-input name-input">
@@ -104,20 +95,20 @@
                     </div>
                 </div>
                 <div class="second-column">
-                    <div class="team-name-input" style="display: flex;">
+                    <div class="team-name-input">
                         <div class="name-input">
-                            <div style="background-color: #3D0244; color: white; height: 30px; padding: 2px; width: 160px; text-align: right;">TEAM NAME</div>
+                            <div class="team-name-heading">TEAM NAME</div>
                             <input type="text">
                         </div>
                     </div>
-                    <div class="team-name-input" style="display: flex;">
+                    <div class="team-name-input">
                         <div class="name-input">
-                            <div style="background-color: #3D0244; color: white; height: 30px; padding: 2px; width: 160px; text-align: right;">MANAGER NAME</div>
+                            <div class="manager-name-input">MANAGER NAME</div>
                             <input type="text">
                         </div>
                     </div>
                     <div class="bench">
-                        <div style="background-color: #3D0244; color: white; height: 34px; margin-top: 15px; width: 300px; padding: 1px 1px 1px 10px; line-height: 34px;">
+                        <div class="bench-heading">
                             BENCH
                         </div>
                         <div class="player-input name-input">
@@ -148,14 +139,14 @@
                             <input type="text">
                             <div class="switch">GK</div>
                         </div>
-                        <div style="background-color: #ABACA6; width: 46px; height: 30px; font-size: 20px; text-align: center; margin-top: 15px; cursor: pointer;">
+                        <div class="add-player-button">
                             +
                         </div>
                     </div>
                 </div>
                 <div class="third-column">
-                    <div class="submit-button">
-                        <button style="background-color: #3D0244; color: white;  font-size: 20px; font-family: premierLeague; padding: 15px;"> READY! </button>
+                    <div>
+                        <button class="submit-button"> READY! </button>
                     </div>
                 </div>
             </div>

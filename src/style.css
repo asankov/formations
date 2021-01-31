@@ -1,12 +1,19 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap'); */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap");
+
 @font-face {
   font-family: "premierLeague";
   src: local("premierLeague"), url("./font.ttf"), format("truetype");
 }
 
 html {
-  font-family: "premierLeague", "Arial";
+  font-family: "Ubuntu", "premierLeague", "Arial";
   background-color: #ecefe8;
   font-size: 20px;
+}
+
+.field-page-container {
+  display: flex;
 }
 
 .team-name-container {
@@ -136,11 +143,4 @@ html {
 
 .crest {
   height: 300px;
-}
-
-.root {
-  background-color: #ecefe8;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
 }
