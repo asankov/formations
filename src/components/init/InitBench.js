@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const InitBench = ({
   bench,
@@ -21,7 +22,7 @@ const InitBench = ({
           className += " switch-selected";
         }
         return (
-          <div key={i} className="player-input name-input">
+          <div key={i} className="player-input-container name-input">
             <input
               type="text"
               value={player.lastName}
@@ -47,6 +48,15 @@ const InitBench = ({
       </div>
     </div>
   );
+};
+
+InitBench.propTypes = {
+  bench: PropTypes.array.isRequired,
+  onBenchPlayerNameChange: PropTypes.func.isRequired,
+  onBenchGkSelection: PropTypes.func.isRequired,
+  onRemoveBenchPlayer: PropTypes.func.isRequired,
+  disableBench: PropTypes.bool.isRequired,
+  onAddPlayerToBench: PropTypes.func.isRequired,
 };
 
 export default InitBench;

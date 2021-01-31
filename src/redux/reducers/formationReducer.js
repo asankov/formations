@@ -1,11 +1,11 @@
 import { SUBMIT_TEAM } from "../actions/actionTypes";
 import initialState from "./initialState";
 
-const benchReducer = (state = initialState.bench, action) => {
+const formationReducer = (state = initialState.formation, action) => {
   if (action.type === SUBMIT_TEAM) {
-    return action.bench;
+    return action.formation;
   }
   return state;
 };
 
-export default benchReducer;
+export default formationReducer;

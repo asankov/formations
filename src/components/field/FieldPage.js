@@ -1,37 +1,52 @@
-import React from "react";
-import BenchPlayers from "./FieldPlayers";
+import React, { useEffect } from "react";
+import FieldPlayers from "./FieldPlayers";
 import PropTypes from "prop-types";
-import FieldPlayers from "./BenchPlayers";
+import BenchPlayers from "./BenchPlayers";
 import Manager from "./Manager";
 import TeamName from "./TeamName";
 import TeamLogo from "./TeamLogo";
 import { connect } from "react-redux";
+import BackButton from "./BackButton";
 // import "./font.ttf";
 
-const FieldPage = ({ players, bench, manager, teamName }) => (
-  <div className="field-page-container">
-    <div className="left-side">
-      <TeamLogo />
-      <Manager manager={manager} />
-      <BenchPlayers benchPlayers={bench} />
+const FieldPage = ({ formation, bench, manager, teamName, ...props }) => {
+  useEffect(() => {
+    if (!teamName) {
+      props.history.push("/");
+    }
+  }, []);
+
+  const handleClickBack = () => {
+    props.history.push("/");
+  };
+
+  return (
+    <div className="field-page-container">
+      <div className="left-side">
+        <BackButton onClick={handleClickBack} />
+        <TeamLogo />
+        <Manager manager={manager} />
+        <BenchPlayers benchPlayers={bench} />
+      </div>
+      <div className="right-side">
+        <TeamName teamName={teamName} />
+        <FieldPlayers players={formation} />
+      </div>
     </div>
-    <div className="right-side">
-      <TeamName teamName={teamName} />
-      <FieldPlayers players={players} />
-    </div>
-  </div>
-);
+  );
+};
 
 FieldPage.propTypes = {
-  players: PropTypes.array.isRequired,
+  formation: PropTypes.object.isRequired,
   bench: PropTypes.array.isRequired,
   teamName: PropTypes.string,
   manager: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => {
   return {
-    players: state.players,
+    formation: state.formation,
     bench: state.bench,
     teamName: state.teamName,
     manager: state.manager,

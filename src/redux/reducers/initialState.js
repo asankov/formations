@@ -78,4 +78,79 @@ export default {
       isCaptain: false,
     },
   ],
+
+  formation: {
+    gk: {
+      position: "GK",
+      firstName: "",
+      lastName: "",
+      isCaptain: true,
+    },
+    def: [
+      {
+        position: "CB",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+      {
+        position: "CB",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+      {
+        position: "RB",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+      {
+        position: "LB",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+    ],
+    mid: [
+      {
+        position: "CM",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+      {
+        position: "RCM",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+      {
+        position: "LCM",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+    ],
+    att: [
+      {
+        position: "RF",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+      {
+        position: "LF",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+      {
+        position: "CF",
+        firstName: "",
+        lastName: "",
+        isCaptain: false,
+      },
+    ],
+  },
 };

@@ -12,6 +12,21 @@ html {
   font-size: 20px;
 }
 
+.back-button {
+  background-color: #3d0244;
+  color: white;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.back-button-text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
 .field-page-container {
   display: flex;
 }
@@ -45,6 +60,14 @@ html {
   justify-content: space-around;
 }
 
+.captain-badge {
+  align-self: flex-end;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin: 0 10px 5px 0;
+  font-weight: bold;
+  font-size: 24px;
+}
 .gk-line {
   display: flex;
   justify-content: center;

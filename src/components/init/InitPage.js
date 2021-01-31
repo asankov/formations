@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import InitForm from "./InitForm";
 import { connect } from "react-redux";
 import { submitTeam } from "../../redux/actions/teamActions";
-import { error } from "loglevel";
 
 const InitPage = props => {
   const [errors, setErrors] = useState({});
@@ -14,15 +13,18 @@ const InitPage = props => {
 
   const disableBench = bench.length >= 9;
 
-  const handlePlayerNameChange = ({ target }, i) => {
+  const handlePlayerFirstNameChange = ({ target }, i) => {
+    let newPlayers = [...players];
+    newPlayers[i] = { ...newPlayers[i], firstName: target.value };
+    setPlayers(newPlayers);
+  };
+  const handlePlayerLastNameChange = ({ target }, i) => {
     if (errors[i] && target.value) {
       const newErrors = { ...errors };
       delete newErrors[i];
       setErrors(newErrors);
     } else if (!target.value) {
-      console.log(errors);
       setErrors({ ...errors, [i]: "Player name is required." });
-      console.log(errors);
     }
     let newPlayers = [...players];
     newPlayers[i] = { ...newPlayers[i], lastName: target.value };
@@ -76,13 +78,14 @@ const InitPage = props => {
     // TODO: different formations
     const playersInFormation = {
       gk: players[0],
-      def: [players[1], players[2], players[3], players[4]],
-      mid: [players[5], players[6], players[7]],
-      att: [players[8], players[9], players[10]],
+      def: [players[3], players[2], players[1], players[4]],
+      mid: [players[6], players[5], players[7]],
+      att: [players[8], players[10], players[9]],
     };
     // TODO: manager
     props.submitTeam({
-      players: playersInFormation,
+      players: players,
+      formation: playersInFormation,
       bench: bench.filter(p => p.lastName),
       teamName,
       manager: { lastName: managerName },
@@ -102,6 +105,10 @@ const InitPage = props => {
       _errors["manager"] = "Manager name is required.";
     }
 
+    if (!teamName) {
+      _errors["teamName"] = "Team name is required.";
+    }
+
     setErrors(_errors);
     return Object.entries(_errors).length === 0;
   };
@@ -114,7 +121,8 @@ const InitPage = props => {
       managerName={managerName}
       errors={errors}
       disableBench={disableBench}
-      onPlayerNameChange={handlePlayerNameChange}
+      onPlayerFirstNameChange={handlePlayerFirstNameChange}
+      onPlayerLastNameChange={handlePlayerLastNameChange}
       onPlayerCaptainButtonClicked={handlePlayerCaptainButtonClicked}
       onTeamNameChange={handleTeamNameChange}
       onManagerNameChange={handleManagerNameChange}
@@ -133,6 +141,7 @@ InitPage.propTypes = {
   teamName: PropTypes.string,
   managerName: PropTypes.string,
   submitTeam: PropTypes.func.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => {

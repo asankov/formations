@@ -11,7 +11,8 @@ const InitForm = ({
   managerName,
   errors,
   disableBench,
-  onPlayerNameChange,
+  onPlayerFirstNameChange,
+  onPlayerLastNameChange,
   onPlayerCaptainButtonClicked,
   onTeamNameChange,
   onManagerNameChange,
@@ -27,7 +28,8 @@ const InitForm = ({
         <InitPlayers
           players={players}
           errors={errors}
-          onPlayerNameChange={onPlayerNameChange}
+          onPlayerFirstNameChange={onPlayerFirstNameChange}
+          onPlayerLastNameChange={onPlayerLastNameChange}
           onPlayerCaptainButtonClicked={onPlayerCaptainButtonClicked}
         />
       </div>
@@ -60,6 +62,23 @@ const InitForm = ({
   );
 };
 
-InitForm.propTypes = {};
+InitForm.propTypes = {
+  players: PropTypes.array.isRequired,
+  errors: PropTypes.object.isRequired,
+  onPlayerFirstNameChange: PropTypes.func.isRequired,
+  onPlayerLastNameChange: PropTypes.func.isRequired,
+  onPlayerCaptainButtonClicked: PropTypes.func.isRequired,
+  teamName: PropTypes.string.isRequired,
+  onTeamNameChange: PropTypes.func.isRequired,
+  managerName: PropTypes.string.isRequired,
+  onManagerNameChange: PropTypes.func.isRequired,
+  bench: PropTypes.array.isRequired,
+  onBenchPlayerNameChange: PropTypes.func.isRequired,
+  onBenchGkSelection: PropTypes.func.isRequired,
+  onRemoveBenchPlayer: PropTypes.func.isRequired,
+  disableBench: PropTypes.bool.isRequired,
+  onAddPlayerToBench: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default InitForm;

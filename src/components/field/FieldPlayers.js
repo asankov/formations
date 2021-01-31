@@ -1,26 +1,35 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const Players = ({ benchPlayers }) => {
-  if (!benchPlayers.length) {
-    return null;
-  }
+const renderLine = players =>
+  players.map((player, i) => renderPlayer(player, i));
+
+const renderPlayer = (player, key) => (
+  <div key={key} className="player">
+    {/* <img src={englandFlag} className="flag" alt="" /> */}
+    {player.isCaptain && <div className="captain-badge">C</div>}
+    <span className="player-name">
+      <div className="first-name">{player.firstName}</div>
+      <div className="family-name">{player.lastName}</div>
+    </span>
+  </div>
+);
+
+const Players = ({ players }) => {
   return (
-    <div className="bench">
-      <div className="substitutes-headline">SUBSTITUTES</div>
-      {benchPlayers.map((player, i) => (
-        <div key={i} className="bench-player">
-          <span className="first-name">{player.firstName}</span>{" "}
-          <span className="family-name">{player.lastName}</span>
-          {player.isGk && <span className="gk-label">GK</span>}
-        </div>
-      ))}
+    <div className="field-wrapper">
+      <div className="field">
+        <div className="gk-line">{renderPlayer(players.gk)}</div>
+        <div className="defence-line line">{renderLine(players.def)}</div>
+        <div className="midfield-line line">{renderLine(players.mid)}</div>
+        <div className="attack-line line">{renderLine(players.att)}</div>
+      </div>
     </div>
   );
 };
 
 Players.propTypes = {
-  benchPlayers: PropTypes.array.isRequired,
+  players: PropTypes.object.isRequired,
 };
 
 export default Players;

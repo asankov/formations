@@ -1,9 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const InitPlayers = ({
   players,
   errors,
-  onPlayerNameChange,
+  onPlayerFirstNameChange,
+  onPlayerLastNameChange,
   onPlayerCaptainButtonClicked,
 }) => {
   const renderPlayer = (player, i) => {
@@ -11,31 +13,47 @@ const InitPlayers = ({
     if (player.isCaptain) {
       captainBtnClassName += " switch-selected";
     }
-    let inputClassName = "player-input name-input";
+    let inputClassName = "name-input";
     if (errors[i]) {
       inputClassName += " has-error";
     }
     return (
-      <>
-        <div key={i} className={inputClassName}>
-          <div className="position">{player.position}</div>
+      <div key={i} className="player-input-container">
+        <div className="position">{player.position}</div>
+        <span className={inputClassName}>
           <input
             type="text"
-            value={player.lastName}
-            onChange={e => onPlayerNameChange(e, i)}
+            value={player.firstName}
+            onChange={e => onPlayerFirstNameChange(e, i)}
           />
-          <div
-            className={captainBtnClassName}
-            onClick={() => onPlayerCaptainButtonClicked(i)}
-          >
-            C
-          </div>
+          <span style={{ marginLeft: "10px" }}>
+            <input
+              name="familyName"
+              type="text"
+              value={player.lastName}
+              onChange={e => onPlayerLastNameChange(e, i)}
+            />
+            <div className="error-msg">{errors[i]}</div>
+          </span>
+        </span>
+        <div
+          className={captainBtnClassName}
+          onClick={() => onPlayerCaptainButtonClicked(i)}
+        >
+          C
         </div>
-        <div className="error-msg">{errors[i]}</div>
-      </>
+      </div>
     );
   };
   return <div className="squad">{players.map(renderPlayer)}</div>;
+};
+
+InitPlayers.propTypes = {
+  players: PropTypes.array.isRequired,
+  errors: PropTypes.object.isRequired,
+  onPlayerFirstNameChange: PropTypes.func.isRequired,
+  onPlayerLastNameChange: PropTypes.func.isRequired,
+  onPlayerCaptainButtonClicked: PropTypes.func.isRequired,
 };
 
 export default InitPlayers;
