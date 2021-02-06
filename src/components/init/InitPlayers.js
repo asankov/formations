@@ -10,7 +10,7 @@ const InitPlayers = ({
   onPlayerCaptainButtonClicked,
 }) => {
   const renderPlayer = (player, i) => {
-    let captainBtnClassName = "switch";
+    let captainBtnClassName = "captain-switch switch";
     if (player.isCaptain) {
       captainBtnClassName += " switch-selected";
     }

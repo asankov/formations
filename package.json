@@ -5,8 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js --port 3005",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watch"
   },
+  "jest": {
+    "setupFiles": [
+      "./tools/testSetup.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/tools/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/tools/styleMock.js"
+    }
+  }, 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/asankov/formations.git"
