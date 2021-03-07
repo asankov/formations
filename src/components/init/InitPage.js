@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import InitForm from "./InitForm";
 import Header from "../common/Header";
 import { connect } from "react-redux";
 import { submitTeam } from "../../redux/actions/teamActions";
+import { loadCountries } from "../../redux/actions/countriesActions";
 
 const InitPage = props => {
   const [errors, setErrors] = useState({});
@@ -13,6 +14,12 @@ const InitPage = props => {
   const [players, setPlayers] = useState([...props.players]);
 
   const disableBench = bench.length >= 9;
+
+  useEffect(() => {
+    if (!props.countries.size) {
+      props.loadCountries();
+    }
+  }, []);
 
   const handlePlayerFirstNameChange = ({ target }, i) => {
     let newPlayers = [...players];
@@ -29,6 +36,11 @@ const InitPage = props => {
     }
     let newPlayers = [...players];
     newPlayers[i] = { ...newPlayers[i], lastName: target.value };
+    setPlayers(newPlayers);
+  };
+  const handlePlayerCountryChange = (code, i) => {
+    let newPlayers = [...players];
+    newPlayers[i] = { ...newPlayers[i], country: { code: code } };
     setPlayers(newPlayers);
   };
 
@@ -144,9 +156,11 @@ const InitPage = props => {
         teamName={teamName}
         manager={manager}
         errors={errors}
+        countries={props.countries}
         disableBench={disableBench}
         onPlayerFirstNameChange={handlePlayerFirstNameChange}
         onPlayerLastNameChange={handlePlayerLastNameChange}
+        onPlayerCountryChange={handlePlayerCountryChange}
         onPlayerNumberChange={handlePlayerNumberChange}
         onPlayerCaptainButtonClicked={handlePlayerCaptainButtonClicked}
         onTeamNameChange={handleTeamNameChange}
@@ -178,10 +192,12 @@ const mapStateToProps = state => {
     bench: state.bench,
     teamName: state.teamName,
     manager: state.manager,
+    countries: state.countries,
   };
 };
 
 const mapDispatchToProps = {
   submitTeam,
+  loadCountries,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(InitPage);
