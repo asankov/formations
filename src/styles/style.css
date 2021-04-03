@@ -1,8 +1,10 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap'); */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
 html {
-  font-family: "Ubuntu", "Arial";
+  font-family: "Red Hat Text", "Arial";
+  /* font-weight: bold; */
   background-color: #ecefe8;
   font-size: 20px;
 }
@@ -29,18 +31,20 @@ html {
 .team-name-container {
   position: relative;
   background-color: #3d0244;
-  height: 90px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
 }
 
 .team-name {
   color: white;
-  font-size: 50px;
+  font-size: 36px;
   padding-left: 20px;
   margin: 0;
   top: 50%;
   transform: translateY(-50%);
+  font-weight: bold;
+  line-height: 70px;
 }
 
 .bench-player {
@@ -146,6 +150,7 @@ html {
   background-color: #3d0244;
   color: white;
   padding: 10px;
+  font-weight: bold;
 }
 
 .manager-name {
@@ -159,6 +164,7 @@ html {
   color: black;
   padding: 10px;
   border-bottom: 5px solid #abaca6;
+  font-weight: bold;
 }
 
 .gk-label {

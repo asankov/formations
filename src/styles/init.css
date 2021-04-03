@@ -1,6 +1,7 @@
 .player-input-container {
   display: flex;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .player-input-container input {
@@ -39,6 +40,7 @@
 .team-name-input-container {
   display: flex;
   padding-bottom: 15px;
+  font-weight: bold;
 }
 
 .team-name-heading {
@@ -71,6 +73,7 @@
   width: 300px;
   padding: 1px 1px 1px 10px;
   line-height: 34px;
+  font-weight: bold;
 }
 .position {
   background-color: #3d0244;
@@ -94,7 +97,7 @@ input {
   width: 200px;
 }
 
-.team-name-input{
+.team-name-input {
   width: 300px;
 }
 
@@ -149,6 +152,7 @@ button {
   text-align: center;
   margin-top: 15px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .add-player-button.disabled {

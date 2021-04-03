@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import InitForm from "./InitForm";
+import Header from "../common/Header";
 import { connect } from "react-redux";
 import { submitTeam } from "../../redux/actions/teamActions";
 
@@ -222,27 +223,30 @@ const InitPage = props => {
   };
 
   return (
-    <InitForm
-      players={players}
-      bench={bench}
-      teamName={teamName}
-      manager={manager}
-      errors={errors}
-      disableBench={disableBench}
-      onPlayerFirstNameChange={handlePlayerFirstNameChange}
-      onPlayerLastNameChange={handlePlayerLastNameChange}
-      onPlayerNumberChange={handlePlayerNumberChange}
-      onPlayerCaptainButtonClicked={handlePlayerCaptainButtonClicked}
-      onTeamNameChange={handleTeamNameChange}
-      onManagerFirstNameChange={handleManagerFirstNameChange}
-      onManagerLastNameChange={handleManagerLastNameChange}
-      onBenchPlayerNameChange={handleBenchPlayerNameChange}
-      onBenchGkSelection={handleBenchGkSelection}
-      onRemoveBenchPlayer={handleRemoveBenchPlayer}
-      onAddPlayerToBench={handleAddPlayerToBench}
-      onSubmit={handleSubmit}
-      onPopulate={handlePopulate}
-    />
+    <>
+      <Header></Header>
+      <InitForm
+        players={players}
+        bench={bench}
+        teamName={teamName}
+        manager={manager}
+        errors={errors}
+        disableBench={disableBench}
+        onPlayerFirstNameChange={handlePlayerFirstNameChange}
+        onPlayerLastNameChange={handlePlayerLastNameChange}
+        onPlayerNumberChange={handlePlayerNumberChange}
+        onPlayerCaptainButtonClicked={handlePlayerCaptainButtonClicked}
+        onTeamNameChange={handleTeamNameChange}
+        onManagerFirstNameChange={handleManagerFirstNameChange}
+        onManagerLastNameChange={handleManagerLastNameChange}
+        onBenchPlayerNameChange={handleBenchPlayerNameChange}
+        onBenchGkSelection={handleBenchGkSelection}
+        onRemoveBenchPlayer={handleRemoveBenchPlayer}
+        onAddPlayerToBench={handleAddPlayerToBench}
+        onSubmit={handleSubmit}
+        onPopulate={handlePopulate}
+      />
+    </>
   );
 };
 
