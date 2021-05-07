@@ -6,7 +6,12 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.dev.js --port 3005",
     "test": "jest",
-    "test-watch": "jest --watch"
+    "test-watch": "jest --watch",
+    "test:ci": "jest",
+    "clean:build": "rm -rf ./build && mkdir build",
+    "prebuild": "run-p clean:build test:ci",
+    "build": "webpack --config webpack.config.prod.js",
+    "serve:build": "http-server ./build"
   },
   "jest": {
     "setupFiles": [
