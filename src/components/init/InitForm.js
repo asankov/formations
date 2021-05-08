@@ -62,7 +62,6 @@ const InitForm = ({
       </div>
       <div className="third-column">
         <div>
-          <button onClick={onPopulate}>Populate</button>
           <button className="submit-button" type="submit">
             {" "}
             READY!{" "}
