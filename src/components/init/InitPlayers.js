@@ -32,6 +32,7 @@ const InitPlayers = ({
           <input
             type="text"
             value={player.firstName}
+            placeholder="FIRST NAME"
             onChange={e => onPlayerFirstNameChange(e, i)}
           />
           <span style={{ marginLeft: "10px" }}>
@@ -39,6 +40,7 @@ const InitPlayers = ({
               name="familyName"
               type="text"
               value={player.lastName}
+              placeholder="LAST NAME"
               onChange={e => onPlayerLastNameChange(e, i)}
             />
             <div className="error-msg">{errors[i]}</div>
