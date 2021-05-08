@@ -18,6 +18,7 @@ const InitTeam = ({
             type="text"
             className="team-name-input"
             value={teamName}
+            placeholder="TEAM NAME"
             onChange={onTeamNameChange}
           />
           <div className="error-msg">{errors["teamName"]}</div>
@@ -28,12 +29,14 @@ const InitTeam = ({
           <div className="manager-name-input">MANAGER NAME</div>
           <input
             type="text"
+            placeholder="FIRST NAME"
             value={manager.firstName}
             onChange={onManagerFirstNameChange}
           />
           <span style={{ marginLeft: "10px" }}>
             <input
               type="text"
+              placeholder="LAST NAME"
               value={manager.lastName}
               onChange={onManagerLastNameChange}
             />

@@ -27,6 +27,7 @@ const InitBench = ({
               type="text"
               name="firstName"
               value={player.firstName}
+              placeholder="FIRST NAME"
               onChange={e => onBenchPlayerNameChange(e, i)}
             />
             <input
@@ -34,6 +35,7 @@ const InitBench = ({
               type="text"
               name="lastName"
               value={player.lastName}
+              placeholder="LAST NAME"
               onChange={e => onBenchPlayerNameChange(e, i)}
             />
             <div className={className} onClick={() => onBenchGkSelection(i)}>
