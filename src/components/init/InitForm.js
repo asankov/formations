@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import InitTeam from "./InitTeam";
 import InitPlayers from "./InitPlayers";
 import InitBench from "./InitBench";
+import InitPresets from "./InitPresets";
 
 const InitForm = ({
   players,
@@ -27,7 +28,11 @@ const InitForm = ({
 }) => {
   return (
     <form className="squad-input" onSubmit={onSubmit}>
-      <div className="first-column">
+      <div
+        className="first-column"
+        style={{ display: "flex", flexDirection: "column" }}
+      >
+        <InitPresets onPopulate={onPopulate}></InitPresets>
         <InitPlayers
           players={players}
           errors={errors}

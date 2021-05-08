@@ -1,6 +1,7 @@
 import React from "react";
 
 const Header = () => {
+  const shouldShowSignup = false;
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <span
@@ -33,14 +34,18 @@ const Header = () => {
           <span
             style={{ color: "white", marginRight: "15px", lineHeight: "70px" }}
           >
-            <span style={{ fontWeight: "100", cursor: "pointer" }}>
-              Sign up{" "}
-            </span>
-            |
-            <span style={{ cursor: "pointer", fontWeight: "bold" }}>
-              {" "}
-              Log In
-            </span>
+            {shouldShowSignup &&
+              (
+                <span style={{ fontWeight: "100", cursor: "pointer" }}>
+                  Sign up{" "}
+                </span>
+              ) |
+                (
+                  <span style={{ cursor: "pointer", fontWeight: "bold" }}>
+                    {" "}
+                    Log In
+                  </span>
+                )}
           </span>
         </span>
       </span>

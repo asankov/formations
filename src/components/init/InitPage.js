@@ -128,98 +128,11 @@ const InitPage = props => {
     return Object.entries(_errors).length === 0;
   };
 
-  const handlePopulate = e => {
-    e.preventDefault();
-    setTeamName("TOTTENHAM HOTSPUR FC");
-    setManager({ firstName: "JOSE", lastName: "MOURINHO" });
-    setBench([
-      { firstName: "PAULO", lastName: "GAZZANIGA", isGk: true },
-      { firstName: "DAVINSON", lastName: "SANCHEZ", isGk: false },
-      { firstName: "SERGE", lastName: "AURIER", isGk: false },
-      { firstName: "HARRY", lastName: "WINKS", isGk: false },
-      { firstName: "GIOVANI", lastName: "LO CELSO", isGk: false },
-      { firstName: "STEVEN", lastName: "BERGWIJN", isGk: false },
-      { firstName: "LUCAS", lastName: "MOURA", isGk: false },
-    ]);
-    setPlayers([
-      {
-        position: "GK",
-        firstName: "HUGO",
-        lastName: "LLORIS",
-        number: 1,
-        isCaptain: true,
-      },
-      {
-        position: "CB",
-        firstName: "ERIK",
-        lastName: "DIER",
-        number: 15,
-        isCaptain: false,
-      },
-      {
-        position: "CB",
-        firstName: "TOBY",
-        lastName: "ALDERWEIRELD",
-        number: 4,
-        isCaptain: false,
-      },
-      {
-        position: "RB",
-        firstName: "MATT",
-        lastName: "DOHERTY",
-        number: 2,
-        isCaptain: false,
-      },
-      {
-        position: "LB",
-        firstName: "SERGIO",
-        lastName: "REGUILLON",
-        number: 3,
-        isCaptain: false,
-      },
-      {
-        position: "CM",
-        firstName: "PIERRE-EMILE",
-        lastName: "HOJBJERG",
-        number: 5,
-        isCaptain: false,
-      },
-      {
-        position: "RCM",
-        firstName: "MOUSSA",
-        lastName: "SISSOKO",
-        number: 17,
-        isCaptain: false,
-      },
-      {
-        position: "LCM",
-        firstName: "TANGUY",
-        lastName: "NDOMBELE",
-        number: 28,
-        isCaptain: false,
-      },
-      {
-        position: "RF",
-        firstName: "GARETH",
-        lastName: "BALE",
-        number: 11,
-        isCaptain: false,
-      },
-      {
-        position: "LF",
-        firstName: "HEUNG-MIN",
-        lastName: "SON",
-        number: 7,
-        isCaptain: false,
-      },
-      {
-        position: "CF",
-        firstName: "HARRY",
-        lastName: "KANE",
-        number: 10,
-        isCaptain: false,
-      },
-    ]);
+  const handlePopulate = ({ teamName, manager, bench, players }) => {
+    setTeamName(teamName);
+    setManager(manager);
+    setBench(bench);
+    setPlayers(players);
   };
 
   return (
