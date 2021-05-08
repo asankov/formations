@@ -1,1 +1,2 @@
 export const SUBMIT_TEAM = "SUBMIT_TEAM";
+export const LOAD_COUNTRIES = "LOAD_COUNTRIES"

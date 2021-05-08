@@ -18,6 +18,9 @@ export default [
         lastName: "LLORIS",
         number: 1,
         isCaptain: true,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "CB",
@@ -25,6 +28,9 @@ export default [
         lastName: "DIER",
         number: 15,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "CB",
@@ -32,6 +38,9 @@ export default [
         lastName: "ALDERWEIRELD",
         number: 4,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "RB",
@@ -39,6 +48,9 @@ export default [
         lastName: "DOHERTY",
         number: 2,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "LB",
@@ -46,6 +58,9 @@ export default [
         lastName: "REGUILLON",
         number: 3,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "CM",
@@ -53,6 +68,9 @@ export default [
         lastName: "HOJBJERG",
         number: 5,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "RCM",
@@ -60,6 +78,9 @@ export default [
         lastName: "SISSOKO",
         number: 17,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "LCM",
@@ -67,6 +88,9 @@ export default [
         lastName: "NDOMBELE",
         number: 28,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "RF",
@@ -74,6 +98,9 @@ export default [
         lastName: "BALE",
         number: 11,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "LF",
@@ -81,6 +108,9 @@ export default [
         lastName: "SON",
         number: 7,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "CF",
@@ -88,6 +118,9 @@ export default [
         lastName: "KANE",
         number: 10,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
     ],
   },
@@ -110,6 +143,9 @@ export default [
         lastName: "EDERSON",
         number: 31,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "RB",
@@ -117,6 +153,9 @@ export default [
         lastName: "WALKER",
         number: 2,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "CB",
@@ -124,6 +163,9 @@ export default [
         lastName: "STONES",
         number: 5,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "GK",
@@ -131,6 +173,9 @@ export default [
         lastName: "DIAZ",
         number: 3,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "LB",
@@ -138,6 +183,9 @@ export default [
         lastName: "CANCELO",
         number: 27,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "CM",
@@ -145,6 +193,9 @@ export default [
         lastName: "RODRI",
         number: 16,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "RCM",
@@ -152,6 +203,9 @@ export default [
         lastName: "GUNDOGAN",
         number: 8,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "LCM",
@@ -159,6 +213,9 @@ export default [
         lastName: "DE BRUYNE",
         number: 17,
         isCaptain: true,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "RF",
@@ -166,6 +223,9 @@ export default [
         lastName: "MAHREZ",
         number: 26,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "LF",
@@ -173,6 +233,9 @@ export default [
         lastName: "STERLING",
         number: 7,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
       {
         position: "CF",
@@ -180,6 +243,9 @@ export default [
         lastName: "JESUS",
         number: 9,
         isCaptain: false,
+        country: {
+          code: "gbr",
+        },
       },
     ],
   },

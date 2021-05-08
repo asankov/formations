@@ -60,12 +60,10 @@ html {
 
 .player-number-container {
   display: flex;
-  justify-content: center;
-}
-
-.player-number-and-captain-container {
-  display: flex;
   justify-content: space-between;
+}
+.player-number-container .flag {
+  margin: 0;
 }
 
 .player-number {
@@ -131,9 +129,10 @@ html {
 }
 
 .flag {
-  width: 40px;
+  /* height: 30px; */
+  width: 60px;
+  align-self: flex-end;
 }
-
 .player-name {
   width: 250px;
   padding: 7px;

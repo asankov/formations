@@ -11,9 +11,11 @@ const InitForm = ({
   teamName,
   manager,
   errors,
+  countries,
   disableBench,
   onPlayerFirstNameChange,
   onPlayerLastNameChange,
+  onPlayerCountryChange,
   onPlayerNumberChange,
   onPlayerCaptainButtonClicked,
   onTeamNameChange,
@@ -36,8 +38,10 @@ const InitForm = ({
         <InitPlayers
           players={players}
           errors={errors}
+          countries={countries}
           onPlayerFirstNameChange={onPlayerFirstNameChange}
           onPlayerLastNameChange={onPlayerLastNameChange}
+          onPlayerCountryChange={onPlayerCountryChange}
           onPlayerNumberChange={onPlayerNumberChange}
           onPlayerCaptainButtonClicked={onPlayerCaptainButtonClicked}
         />

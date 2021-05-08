@@ -192,3 +192,67 @@ button {
 .remove-bench-player-btn:hover {
   opacity: 100%;
 }
+
+.countries {
+  position: absolute;
+  max-height: 300px;
+  overflow: scroll;
+}
+.country-search {
+  width: 60px;
+  font-size: 12px;
+  box-shadow: "none";
+  margin-right: 10px;
+}
+.country-select-container {
+  padding-right: 10px;
+}
+
+.country-flag-container {
+  width: 64px;
+}
+.country-flag {
+  height: 32px;
+  padding-right: 15px;
+}
+.country-dropdown-arrow {
+  height: 32px;
+  width: 38px;
+  background-color: #3d0244;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.search-container {
+  display: flex;
+}
+.magnifying-glass {
+  background-color: #abaca7;
+  height: 34px;
+  padding: 0 5px;
+}
+.option {
+  background-color: #cacbc8;
+  color: #370941;
+  cursor: pointer;
+  border-bottom: 2px solid #370941;
+  display: flex;
+}
+.option:hover {
+  background-color: #abaca7;
+}
+.option.selected {
+  color: #abaca7;
+  background-color: #370941;
+  cursor: auto;
+}
+.option-flag {
+  height: 20px;
+  padding: 5px;
+}
+.option-name {
+  margin: auto;
+  font-size: 12px;
+  padding-right: 5px;
+  font-weight: normal;
+}
