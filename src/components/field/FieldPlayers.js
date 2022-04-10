@@ -5,22 +5,25 @@ const renderLine = players =>
   players.map((player, i) => renderPlayer(player, i));
 
 const renderPlayer = (player, key) => {
-  let className = "player-number-container";
-  if (player.isCaptain) {
-    className = "player-number-and-captain-container";
+  let captainBadgeStyle = { width: "50px" };
+  // hide the airband, but keep the DOM object in order to balance the divs
+  if (!player.isCaptain) {
+    captainBadgeStyle["visibility"] = "hidden";
   }
   return (
     <div key={key} className="player">
-      {/* <img src={englandFlag} className="flag" alt="" /> */}
-      <div className={className}>
-        {/* in order to position number and captain armband properly */}
-        {player.isCaptain && (
-          <div style={{ visibility: "hidden" }} className="captain-badge">
+      <div className="player-number-container">
+        <img
+          src={`https://restcountries.eu/data/${player.country.code}.svg`}
+          className="flag"
+          alt=""
+        />
+        <div className="player-number">{player.number}.</div>
+        {
+          <div style={captainBadgeStyle} className="captain-badge">
             C
           </div>
-        )}
-        <div className="player-number">{player.number}.</div>
-        {player.isCaptain && <div className="captain-badge">C</div>}
+        }
       </div>
       <span className="player-name">
         <div className="first-name">{player.firstName}</div>

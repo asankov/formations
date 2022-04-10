@@ -17,6 +17,7 @@ export default {
       lastName: "",
       number: 1,
       isCaptain: true,
+      country: { code: "gbr" },
     },
     {
       position: "CB",
@@ -24,6 +25,7 @@ export default {
       lastName: "",
       number: 4,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "CB",
@@ -31,6 +33,7 @@ export default {
       lastName: "",
       number: 5,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "RB",
@@ -38,6 +41,7 @@ export default {
       lastName: "",
       number: 2,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "LB",
@@ -45,6 +49,7 @@ export default {
       lastName: "",
       number: 3,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "CM",
@@ -52,6 +57,7 @@ export default {
       lastName: "",
       number: 6,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "RCM",
@@ -59,6 +65,7 @@ export default {
       lastName: "",
       number: 8,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "LCM",
@@ -66,6 +73,7 @@ export default {
       lastName: "",
       number: 10,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "RF",
@@ -73,6 +81,7 @@ export default {
       lastName: "",
       number: 11,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "LF",
@@ -80,6 +89,7 @@ export default {
       lastName: "",
       number: 7,
       isCaptain: false,
+      country: { code: "gbr" },
     },
     {
       position: "CF",
@@ -87,6 +97,7 @@ export default {
       lastName: "",
       number: 9,
       isCaptain: false,
+      country: { code: "gbr" },
     },
   ],
 
@@ -164,4 +175,5 @@ export default {
       },
     ],
   },
+  countries: new Map(),
 };

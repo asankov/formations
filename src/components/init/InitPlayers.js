@@ -1,11 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
+import CountrySelectComponent from "./CountrySelectComponent";
 
 const InitPlayers = ({
   players,
   errors,
+  countries,
   onPlayerFirstNameChange,
   onPlayerLastNameChange,
+  onPlayerCountryChange,
   onPlayerNumberChange,
   onPlayerCaptainButtonClicked,
 }) => {
@@ -20,6 +23,11 @@ const InitPlayers = ({
     }
     return (
       <div key={i} className="player-input-container">
+        <CountrySelectComponent
+          selectedCountryCode={player.country.code}
+          countries={countries}
+          onCountrySelect={value => onPlayerCountryChange(value, i)}
+        />
         <div className="position">{player.position}</div>
         <span className={inputClassName}>
           <input
