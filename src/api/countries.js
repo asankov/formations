@@ -1,5 +1,5 @@
 export const getCountries = () => {
-  return fetch("https://restcountries.eu/rest/v2/all").then(handleResponse);
+  return fetch("https://restcountries.com/v3.1/all").then(handleResponse);
 };
 
 const handleResponse = async response => {

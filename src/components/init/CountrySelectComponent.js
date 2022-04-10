@@ -30,8 +30,8 @@ const CountrySelectComponent = ({
   }, []);
 
   const renderCountryOption = option => {
-    const { alpha3Code, flag, name } = option;
-    const code = alpha3Code.toLowerCase();
+    const { cca2, flags, name } = option;
+    const code = cca2.toLowerCase();
     let className = "option";
     const isSelected = code === selectedCountryCode;
     if (isSelected) {
@@ -47,8 +47,8 @@ const CountrySelectComponent = ({
           setDropdownIsOpen(false);
         }}
       >
-        <img className="option-flag" src={flag} />
-        <div className="option-name">{name.toUpperCase()}</div>
+        <img className="option-flag" src={flags.svg} />
+        <div className="option-name">{name.common.toUpperCase()}</div>
       </div>
     );
   };
@@ -86,7 +86,7 @@ const CountrySelectComponent = ({
         <div className="country-flag-container">
           <img
             className="country-flag"
-            src={`https://restcountries.eu/data/${selectedCountryCode}.svg`}
+            src={`https://countryflagsapi.com/svg/${selectedCountryCode}`}
           />
         </div>
       </div>
@@ -103,7 +103,7 @@ const CountrySelectComponent = ({
               setCountryFilter(filter);
               setCountriesToSelectFrom(
                 Array.from(countries.values()).filter(c =>
-                  c.name.toUpperCase().includes(filter)
+                  c.name.common.toUpperCase().includes(filter)
                 )
               );
             }}
